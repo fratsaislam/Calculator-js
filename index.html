@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body class="h-screen flex items-center justify-center">
+    <div class="cont w-[300px] h-[600px] bg-[#000] flex flex-col text-[#fff] p-4 rounded-xl">
+        <!-- Display -->
+        <div class="text-right text-3xl p-4 bg-[#1C1C1C] rounded-lg mb-4" id="display">0</div>
+
+        <!-- Buttons Grid -->
+        <div class="grid grid-cols-4 w-full gap-[8px] place-items-center flex-grow">
+            <!-- Function Buttons -->
+            <div class="flex items-center justify-center bg-[#A5A5A5] text-[#000] rounded-full aspect-square w-full"  id="AC" onclick="cleardisplay()">AC</div>
+            <div class="flex items-center justify-center bg-[#A5A5A5] text-[#000] rounded-full aspect-square w-full" id="DEL" onclick="deleteLast()">DEL</div>
+            <div class="flex items-center justify-center bg-[#A5A5A5] text-[#000] rounded-full aspect-square w-full" id="%" onclick="getOperator(this.id)">%</div>
+            <div class="flex items-center justify-center bg-[#FF9500] text-[#fff] rounded-full aspect-square w-full" id="/" onclick="getOperator(this.id)">/</div>
+
+            <!-- Number Buttons -->
+            <div class="flex items-center justify-center bg-[#333] text-[#fff] rounded-full aspect-square w-full" id="7" onclick="getValue(this.id)">7</div>
+            <div class="flex items-center justify-center bg-[#333] text-[#fff] rounded-full aspect-square w-full" id="8" onclick="getValue(this.id)">8</div>
+            <div class="flex items-center justify-center bg-[#333] text-[#fff] rounded-full aspect-square w-full" id="9" onclick="getValue(this.id)">9</div>
+            <div class="flex items-center justify-center bg-[#FF9500] text-[#fff] rounded-full aspect-square w-full" id="*" onclick="getOperator(this.id)" >*</div>
+
+            <div class="flex items-center justify-center bg-[#333] text-[#fff] rounded-full aspect-square w-full" id="4" onclick="getValue(this.id)">4</div>
+            <div class="flex items-center justify-center bg-[#333] text-[#fff] rounded-full aspect-square w-full" id="5" onclick="getValue(this.id)">5</div>
+            <div class="flex items-center justify-center bg-[#333] text-[#fff] rounded-full aspect-square w-full" id="6" onclick="getValue(this.id)">6</div>
+            <div class="flex items-center justify-center bg-[#FF9500] text-[#fff] rounded-full aspect-square w-full" id="-" onclick="getOperator(this.id)">-</div>
+
+            <div class="flex items-center justify-center bg-[#333] text-[#fff] rounded-full aspect-square w-full" id="1" onclick="getValue(this.id)">1</div>
+            <div class="flex items-center justify-center bg-[#333] text-[#fff] rounded-full aspect-square w-full" id="2" onclick="getValue(this.id)">2</div>
+            <div class="flex items-center justify-center bg-[#333] text-[#fff] rounded-full aspect-square w-full" id="3" onclick="getValue(this.id)">3</div>
+            <div class="flex items-center justify-center bg-[#FF9500] text-[#fff] rounded-full aspect-square w-full" id="+" onclick="getOperator(this.id)">+</div>
+
+            <!-- Bottom Row -->
+            <div class="col-span-2 flex items-center justify-center bg-[#333] text-[#fff] rounded-full h-[60px] w-full" id="0" onclick="getValue(this.id)">0</div>
+            <div class="flex items-center justify-center bg-[#333] text-[#fff] rounded-full aspect-square w-full" id="." onclick="getValue(this.id)">.</div>
+            <div class="flex items-center justify-center bg-[#FF9500] text-[#fff] rounded-full aspect-square w-full" id="=" onclick="calculate()">=</div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+
+</html>
